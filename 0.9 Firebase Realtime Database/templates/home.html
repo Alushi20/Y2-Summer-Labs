@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    <a href="/signout"><button>Sign out.</button></a>
+
+
+
+
+
+
+    <form method="post" action="/home">
+    <input type="text" id="quote" name="quote"placeholder="Type in your quote!">
+    <input class="input-field" type="text" placeholder="Speaker" name="speaker">
+    <button type="submit" class="btn" name = "action" value="quotes">Submit</button>
+    <br>
+    <form action="/home" method="POST">
+      <button type="submit" class="btn" name = "action" value ="signout">Sign out</button>
+    </form>
+    </form>
+
+</body>
+</html>

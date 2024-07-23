@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Indecisive Fortune</title>
+</head>
+<body>
+    <h1>One of these three things will happen to you</h1>
+    <ul>
+        {% for fortune in fortunes %}
+        <li>{{ fortune }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
