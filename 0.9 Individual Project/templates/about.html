@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About</title>
+    <style>
+        body {
+            background-color: wheat;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        .topnav {
+            display: flex;
+            justify-content: space-around;
+            background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent background */
+            padding: 10px;
+            position: relative;
+        }
+        .topnav a {
+            color: black;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px;
+            position: relative;
+        }
+        .topnav a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: black;
+            transition: width 0.3s;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .topnav a:hover::after,
+        .topnav a.active::after {
+            width: 100%;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 36px;
+        }
+        h3 {
+            color: #666;
+            text-align: center;
+            font-size: 24px;
+        }
+        p {
+            color: #444;
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="topnav">
+        <a href="/main" id="main">Main Page</a>
+        <a href="/profile" id="profile">Profile</a>
+        <a href="/about" id="about">About</a>
+        <a href="/signout" id="signout">Sign Out</a>
+    </div>
+    <h1>About</h1>
+    <h3>Welcome To WormHub!!</h3>
+    <p>
+        Dive into a community of book lovers just like you! At Worm Hub, everyone gets a chance to share their thoughts on the latest reads. Whether you’re into thrillers, romance, sci-fi, or non-fiction, our space is all about honest reviews and star ratings from real readers.
+        <br>
+        Love a book? Give it five stars! Not your cup of tea? Let the community know. It’s all about sharing your opinion and discovering new favorites through others’ recommendations. Join us, rate your reads, and let’s keep the conversation about great books going!
+    </p>
+
+    <script>
+        // JavaScript to add 'active' class to the current page's link
+        const currentLocation = window.location.pathname;
+        const menuItems = document.querySelectorAll('.topnav a');
+        
+        menuItems.forEach(item => {
+            if (item.getAttribute('href') === currentLocation) {
+                item.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

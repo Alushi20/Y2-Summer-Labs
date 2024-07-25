@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Write a Review</title>
+    <style>
+        body {
+            background-color: wheat;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        .topnav {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent background */
+            position: relative;
+        }
+        .topnav a {
+            color: black;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px;
+            position: relative;
+        }
+        .topnav a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: black;
+            transition: width 0.3s;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .topnav a:hover::after,
+        .topnav a.active::after {
+            width: 100%;
+        }
+        .content {
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.5); /* Light shaded background */
+            border-radius: 10px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        label {
+            font-size: 18px;
+            color: #333;
+        }
+        input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            width: calc(100% - 22px);
+        }
+        input[name="rating"] {
+            width: 50px;
+        }
+        button {
+            background-color: rgb(76, 149, 167);
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: rgb(76, 149, 167);
+        }
+    </style>
+</head>
+<body>
+    <div class="topnav">
+        <a href="/main" id="main">Main Page</a>
+        <a href="/profile" id="profile">Profile</a>
+        <a href="/about" id="about">About</a>
+        <a href="/signout" id="signout">Sign Out</a>
+    </div>
+    <div class="content">
+        <h1>Write a Review!</h1>
+        <form method="POST" action="/review">
+            <label>The book's title:</label>
+            <input type="text" name="title" required />
+            <label>Rating:</label>
+            <input type="text" name="rating" required />
+            <label>/5</label>
+            <label>Review:</label>
+            <input type="text" name="review" required />
+            <label>Favourite quote:</label>
+            <input type="text" name="fav_quote" required />
+            <button type="submit">Post!</button>
+        </form>
+    </div>
+
+    <script>
+        // JavaScript to add 'active' class to the current page's link
+        const currentLocation = window.location.pathname;
+        const menuItems = document.querySelectorAll('.topnav a');
+        
+        menuItems.forEach(item => {
+            if (item.getAttribute('href') === currentLocation) {
+                item.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

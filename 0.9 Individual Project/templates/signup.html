@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <style>
+        body {
+            background-color: wheat;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            padding: 20px;
+        }
+        form {
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        h4 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 16px;
+            color: #333;
+        }
+        input[type="email"],
+        input[type="password"],
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            box-sizing: border-box;
+            background: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+        }
+        input[type="password"] {
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: rgb(76, 149, 167);
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        button:hover {
+            background-color: rgb(60, 130, 146);
+            transform: scale(1.05);
+        }
+        .error {
+            color: red;
+            font-size: 18px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .signup-link {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            color: #333;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <form method="POST" action="/signup">
+        <!-- Heading -->
+        <h4>Create an account</h4>
+
+        <!-- Subheading -->
+        <p>Please fill up your information below to sign up.</p>
+
+        <!-- Email -->
+        <label for="emailStr">Email address*</label>
+        <input type="email" name="email" id="emailStr" required>
+
+        <!-- Password -->
+        <label for="passwordStr">Password*</label>
+        <input type="password" name="password" id="passwordStr" minlength="6" required>
+
+        <!-- Username -->
+        <label for="usernameStr">Username*</label>
+        <input type="text" name="username" id="usernameStr" required>
+
+        <!-- Error Message -->
+        <div class="error">
+            {{error}}
+        </div>
+
+        <!-- Button -->
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Link to Sign In -->
+    <a href="/login" class="signup-link">Already have an account? Sign in here.</a>
+</body>
+</html>

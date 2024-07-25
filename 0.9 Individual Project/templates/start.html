@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signup</title>
+    <style>
+        body {
+            background-color: wheat;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.5); /* Semi-transparent background */
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            font-size: 36px;
+        }
+        h3 {
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .buttons a {
+            text-decoration: none;
+            position: relative;
+            display: inline-block;
+            margin: 10px;
+        }
+        .buttons a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: black;
+            transition: width 0.3s;
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .buttons a:hover::after {
+            width: 100%;
+        }
+        .buttons button {
+            background-color: rgba(76, 149, 167, 0.8); /* Slightly more opaque background */
+            color: white;
+            padding: 15px 30px; /* Increased padding for visibility */
+            border: none;
+            border-radius: 5px;
+            font-size: 18px; /* Slightly larger font size */
+            font-weight: bold; /* Bolder font weight */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .buttons button:hover {
+            background-color: rgba(76, 149, 167, 1); /* Fully opaque on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome To WormHub!</h1>
+        <h3>Your go-to place for book reviews and ratings from real readers!!!</h3>
+        <div class="buttons">
+            <a href="/signup"><button>Sign Up</button></a>
+            <a href="/login"><button>Log In</button></a>
+        </div>
+    </div>
+</body>
+</html>
